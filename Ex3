@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int mediaH(int n1, int n2, int n3){
+    float media;
+    
+    media=3/((1/n1)+(1/n2)+(1/n3));
+    return media;
+}
+int mediaP(int n1, int n2, int n3){
+    int media;
+    n1=n1/5;
+    n2=n2/3;
+    n3=n3/2;
+    media=n1+n2+n3;
+    
+    return media;
+}
+
+int mediaA(int numero){
+    numero=numero/3;
+}    
+int main()
+{
+    int a[3],soma;
+    char escolha;
+    
+    for (int i=0;i<3;i++){
+    printf("Insira a nota da %d prova: ", i+1);
+    scanf("%d", &a[i]);
+    }
+    soma=a[0]+a[1]+a[2];
+    printf("A-Media Aritmetica \nP-Media Ponderada(5,3 e 2) \nH- Media Harmonica \nInsira a sua escolha:");
+    scanf("%s", &escolha);
+    if (escolha = 'A'){
+        printf("A Media Aritmetica sera: %d", mediaA(soma));
+        return 0;
+    }
+    if (escolha = 'P'){
+        printf("A Media Ponderada sera: %d", mediaP(a[0],a[1],a[2]));
+        return 0;
+    }
+    if (escolha = 'H'){
+        printf("A Media Harmonica sera: %d", mediaH(a[0],a[1],a[2]));
+        return 0;
+    }
+    else{
+        printf("Escolha novamente.");
+    }
+    return 0;
+}
